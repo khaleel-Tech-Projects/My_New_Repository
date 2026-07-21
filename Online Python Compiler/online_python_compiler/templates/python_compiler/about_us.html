@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+    <title>Online Python Compiler</title>
+{% endblock %}
+
+{% block content %}
+
+<div class = 'container jumbotron mt-5'>
+<h1 class="text-center"> About Us</h1>
+    <br><br>
+  <div class="container">
+      <p class="lead mb-50 text-justify">
+        Our team of developers is passionate about creating accessible and user-friendly tools for coding enthusiasts.
+        With expertise in web development and a deep love for Python, we strive to deliver a seamless and efficient
+        coding experience. We're committed to continuously improving and expanding the platform to meet the needs of our users.
+        Our focus is on innovation and quality, ensuring that every feature we implement enhances the learning and coding journey.
+        We actively seek feedback from our community to better understand their challenges and requirements. By fostering a
+        collaborative environment, we aim to empower users to explore their creativity and achieve their coding goals with confidence.
+      </p>
+
+      <h2 style="margin-top: 40px; margin-left: 20px;"> Meet Our Team </h2>
+      <br><br>
+
+      <div class="d-flex justify-content-center">
+          <div class="text-center">
+            <img src="{% static 'images/women.png' %}" width="260" height="280">
+            <h3 style="margin-top: 10px;">Your Name</h3>
+            <p>Developer & Tester</p>
+          </div>
+
+          <div class="text-center">
+            <img src="{% static 'images/men.png' %}" width="260" height="280">
+            <h3 style="margin-top: 10px;">Your Name</h3>
+            <p>Developer & Tester</p>
+          </div>
+
+          <div class="text-center">
+            <img src="{% static 'images/men.png' %}" width="260" height="280">
+            <h3 style="margin-top: 10px;">Your Name</h3>
+            <p>Developer & Tester</p>
+          </div>
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+{% endblock %}
