@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .card-body {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+
+        .no-product-message {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Product Details</h2>
+
+        {% if product %}
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ product[1] }}</h5>  <!-- Product name -->
+    <p class="card-text"><strong>Price:</strong> ₹{{ product[4] }}</p>  <!-- Price -->
+
+                <form action="/add_to_cart/{{ product[0] }}" method="POST">  <!-- Pass product ID -->
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" name="quantity" id="quantity" value="1" min="1" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        {% else %}
+        <div class="no-product-message">
+            <p>No product details available.</p>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<!-- templates/navbar.html -->
+<nav style="padding: 10px; background-color: #f0f0f0;">
+    <span>Welcome, <strong>{{ session['username'] }}</strong></span> |
+    <a href="{{ url_for('logout') }}">Sign Out</a>
+</nav>
+<hr>
